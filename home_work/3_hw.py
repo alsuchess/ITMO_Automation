@@ -14,7 +14,7 @@ def compare_135(a, b):
 
 compare_135(125, 260)
 
-def season(a):
+def find_season(a):
     if a in range(1, 3) or (a == 12):
         print('зима')
     elif a in range(3, 6):
@@ -26,7 +26,7 @@ def season(a):
     else:
         print('введите корректное число')
 
-season(11.3)
+find_season(11.3)
 
 def three_numbers(a, b, c):
     if a > 10 and b > 10 and c > 10:
@@ -55,6 +55,31 @@ def five_numbers(numbers: list):
 
 
 five_numbers([-1, -2, -7, -6, -10])
+
+def five_numbers1(numbers):
+    # elem in elem, >0
+    cnt = 0
+    # 1
+    for idx in range(len(numbers)):
+        if numbers[idx] > 0:
+            cnt += 1
+    print(f"1: {cnt}")
+    # 2
+    cnt = 0
+    for idx, element in enumerate(numbers):  # (index, value)
+        if element > 0:
+            cnt += 1
+    print(f"2: {cnt}")
+    # 3
+    cnt = 0
+    for element in numbers:
+        if element > 0:
+            cnt += 1
+    print(f"3: {cnt}")
+    # 4
+    print(4, sum([1 for element in numbers if element > 0]))
+
+five_numbers1([-2, 4, -6, 8, -10])
 
 def days_count(a, b):
     if b in range(1, 13) and a >= 0:
